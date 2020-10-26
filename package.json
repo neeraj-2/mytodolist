@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "Here is my first todoapp deployed on Heroku",
   "main": "index.js",
-   "scripts": {
-    "client-install": "npm install --prefix client",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "client": "cd client && npm run start",
+    "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon server\" \"npm run client\""
   },
   "engines":{
     "node":"v14.4.0",
