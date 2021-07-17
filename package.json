@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Here is my first todoapp deployed on Heroku",
   "main": "index.js",
-   "scripts": {
+  "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
@@ -11,12 +11,10 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "engines":{
-    "node":"v14.4.0",
-    "npm":"7.0.0"
-
+  "engines": {
+    "node": "v14.4.0",
+    "npm": "7.0.0"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/neeraj-2/mytodolist.git"
